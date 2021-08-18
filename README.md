@@ -18,17 +18,11 @@ extendJQuery($);
 
 ### Use with Cypress
 
-Cypress wraps jQuery it's own way and doesn't expose jQuery directly. Cypress documentation mentions `Cypress.$` and `cy.$$`:
-https://docs.cypress.io/api/utilities/$#Cypress-vs-cy. `Cypress.$` doesn't allow extention of `jQuery` via a `prototype` and
-`cy.$$` does. Therefore, we need to extend the `jQuery` interface via the `cy.$$`
-
 ```js
 // in support/index.ts or support/index.js
 import { extendJQuery } from "testing-library-jquery";
 
-extendJQuery(cy.$$);
-// Typescript
-// extendJQuery((cy as any).$$) // Cypress doesn't expose `cy.$$` via Typescript
+extendJQuery(Cypress.$);
 ```
 
 If you want Typescript types using this library, you'll either have to use a `support/index.ts` file or add the following to

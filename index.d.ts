@@ -91,9 +91,7 @@ declare global {
  * // Cypress, in a `support.ts` or `support.js` file
  * import {extendJQuery} from 'testing-library-jquery'
  *
- * // Cypress uses it's own internal jQuery, but it can be accessed via `cy.$$` which is not in Typescript. You'll have to add `(cy as any).$$` if using Typescript
- * extendJQuery(cy.$$)
+ * // Cypress uses it's own internal jQuery
+ * extendJQuery(Cypress.$)
  */
 export declare function extendJQuery($: Function): void;
-
-type temp = JQuery;

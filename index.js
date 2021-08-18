@@ -2,8 +2,9 @@ const { queries } = require("@testing-library/dom");
 
 function extendJQuery($) {
   Object.keys(queries).forEach(function (key) {
-    $.prototype[key] = function (id, options, waitForOptions) {
-      queries[key](this, id, options, waitForOptions);
+    $.fn[key] = function (id, options, waitForOptions) {
+      const el = $(this)[0];
+      return $(queries[key](el, id, options, waitForOptions));
     };
   });
 }
