@@ -23,55 +23,59 @@ type JQueryQueries = {
   [K in keyof Queries]: RemapQuery<Queries[K]>;
 };
 
-interface JQuery<TElement = HTMLElement> {
-  queryAllByLabelText: JQueryQueries["queryAllByLabelText"];
-  queryByLabelText: JQueryQueries["queryByLabelText"];
-  getAllByLabelText: JQueryQueries["getAllByLabelText"];
-  getByLabelText: JQueryQueries["getByLabelText"];
-  findAllByLabelText: JQueryQueries["findAllByLabelText"];
-  findByLabelText: JQueryQueries["findByLabelText"];
-  queryByPlaceholderText: JQueryQueries["queryByPlaceholderText"];
-  queryAllByPlaceholderText: JQueryQueries["queryAllByPlaceholderText"];
-  getByPlaceholderText: JQueryQueries["getByPlaceholderText"];
-  getAllByPlaceholderText: JQueryQueries["getAllByPlaceholderText"];
-  findAllByPlaceholderText: JQueryQueries["findAllByPlaceholderText"];
-  findByPlaceholderText: JQueryQueries["findByPlaceholderText"];
-  queryByText: JQueryQueries["queryByText"];
-  queryAllByText: JQueryQueries["queryAllByText"];
-  getByText: JQueryQueries["getByText"];
-  getAllByText: JQueryQueries["getAllByText"];
-  findAllByText: JQueryQueries["findAllByText"];
-  findByText: JQueryQueries["findByText"];
-  queryByDisplayValue: JQueryQueries["queryByDisplayValue"];
-  queryAllByDisplayValue: JQueryQueries["queryAllByDisplayValue"];
-  getByDisplayValue: JQueryQueries["getByDisplayValue"];
-  getAllByDisplayValue: JQueryQueries["getAllByDisplayValue"];
-  findAllByDisplayValue: JQueryQueries["findAllByDisplayValue"];
-  findByDisplayValue: JQueryQueries["findByDisplayValue"];
-  queryByAltText: JQueryQueries["queryByAltText"];
-  queryAllByAltText: JQueryQueries["queryAllByAltText"];
-  getByAltText: JQueryQueries["getByAltText"];
-  getAllByAltText: JQueryQueries["getAllByAltText"];
-  findAllByAltText: JQueryQueries["findAllByAltText"];
-  findByAltText: JQueryQueries["findByAltText"];
-  queryByTitle: JQueryQueries["queryByTitle"];
-  queryAllByTitle: JQueryQueries["queryAllByTitle"];
-  getByTitle: JQueryQueries["getByTitle"];
-  getAllByTitle: JQueryQueries["getAllByTitle"];
-  findAllByTitle: JQueryQueries["findAllByTitle"];
-  findByTitle: JQueryQueries["findByTitle"];
-  queryByRole: JQueryQueries["queryByRole"];
-  queryAllByRole: JQueryQueries["queryAllByRole"];
-  getAllByRole: JQueryQueries["getAllByRole"];
-  getByRole: JQueryQueries["getByRole"];
-  findAllByRole: JQueryQueries["findAllByRole"];
-  findByRole: JQueryQueries["findByRole"];
-  queryByTestId: JQueryQueries["queryByTestId"];
-  queryAllByTestId: JQueryQueries["queryAllByTestId"];
-  getByTestId: JQueryQueries["getByTestId"];
-  getAllByTestId: JQueryQueries["getAllByTestId"];
-  findAllByTestId: JQueryQueries["findAllByTestId"];
-  findByTestId: JQueryQueries["findByTestId"];
+// use `declare global` because of the `import` in the file since `JQuery` is a global interface.
+// If you remove the import, the `declare global` is implied
+declare global {
+  interface JQuery<TElement = HTMLElement> {
+    queryAllByLabelText: JQueryQueries["queryAllByLabelText"];
+    queryByLabelText: JQueryQueries["queryByLabelText"];
+    getAllByLabelText: JQueryQueries["getAllByLabelText"];
+    getByLabelText: JQueryQueries["getByLabelText"];
+    findAllByLabelText: JQueryQueries["findAllByLabelText"];
+    findByLabelText: JQueryQueries["findByLabelText"];
+    queryByPlaceholderText: JQueryQueries["queryByPlaceholderText"];
+    queryAllByPlaceholderText: JQueryQueries["queryAllByPlaceholderText"];
+    getByPlaceholderText: JQueryQueries["getByPlaceholderText"];
+    getAllByPlaceholderText: JQueryQueries["getAllByPlaceholderText"];
+    findAllByPlaceholderText: JQueryQueries["findAllByPlaceholderText"];
+    findByPlaceholderText: JQueryQueries["findByPlaceholderText"];
+    queryByText: JQueryQueries["queryByText"];
+    queryAllByText: JQueryQueries["queryAllByText"];
+    getByText: JQueryQueries["getByText"];
+    getAllByText: JQueryQueries["getAllByText"];
+    findAllByText: JQueryQueries["findAllByText"];
+    findByText: JQueryQueries["findByText"];
+    queryByDisplayValue: JQueryQueries["queryByDisplayValue"];
+    queryAllByDisplayValue: JQueryQueries["queryAllByDisplayValue"];
+    getByDisplayValue: JQueryQueries["getByDisplayValue"];
+    getAllByDisplayValue: JQueryQueries["getAllByDisplayValue"];
+    findAllByDisplayValue: JQueryQueries["findAllByDisplayValue"];
+    findByDisplayValue: JQueryQueries["findByDisplayValue"];
+    queryByAltText: JQueryQueries["queryByAltText"];
+    queryAllByAltText: JQueryQueries["queryAllByAltText"];
+    getByAltText: JQueryQueries["getByAltText"];
+    getAllByAltText: JQueryQueries["getAllByAltText"];
+    findAllByAltText: JQueryQueries["findAllByAltText"];
+    findByAltText: JQueryQueries["findByAltText"];
+    queryByTitle: JQueryQueries["queryByTitle"];
+    queryAllByTitle: JQueryQueries["queryAllByTitle"];
+    getByTitle: JQueryQueries["getByTitle"];
+    getAllByTitle: JQueryQueries["getAllByTitle"];
+    findAllByTitle: JQueryQueries["findAllByTitle"];
+    findByTitle: JQueryQueries["findByTitle"];
+    queryByRole: JQueryQueries["queryByRole"];
+    queryAllByRole: JQueryQueries["queryAllByRole"];
+    getAllByRole: JQueryQueries["getAllByRole"];
+    getByRole: JQueryQueries["getByRole"];
+    findAllByRole: JQueryQueries["findAllByRole"];
+    findByRole: JQueryQueries["findByRole"];
+    queryByTestId: JQueryQueries["queryByTestId"];
+    queryAllByTestId: JQueryQueries["queryAllByTestId"];
+    getByTestId: JQueryQueries["getByTestId"];
+    getAllByTestId: JQueryQueries["getAllByTestId"];
+    findAllByTestId: JQueryQueries["findAllByTestId"];
+    findByTestId: JQueryQueries["findByTestId"];
+  }
 }
 
 /**
@@ -91,3 +95,5 @@ interface JQuery<TElement = HTMLElement> {
  * extendJQuery(cy.$$)
  */
 export declare function extendJQuery($: Function): void;
+
+type temp = JQuery;
