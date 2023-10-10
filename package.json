@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/NicholasBoll/testing-library-jquery#readme",
   "dependencies": {
-    "@testing-library/dom": "^8.0.0"
+    "@testing-library/dom": "^9.0.0"
   },
   "devDependencies": {
     "jest": "^27.0.6",
