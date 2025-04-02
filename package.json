@@ -1,6 +1,6 @@
 {
   "name": "testing-library-jquery",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/NicholasBoll/testing-library-jquery#readme",
   "dependencies": {
-    "@testing-library/dom": "^9.0.0"
+    "@testing-library/dom": "^10.0.0"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
+    "jest": "^29.0.0",
     "jquery": "^3.6.0"
   }
 }
